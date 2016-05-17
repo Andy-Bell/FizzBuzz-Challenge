@@ -15,6 +15,9 @@ describe Fizzbuzz do
 			expect(subject.fizz_buzz(6)).to eq "fizz"
 		end
 
+		it 'return number when not divisble by 3, 5 or 15' do
+			expect(subject.fizz_buzz(7)).to eq "7"
+		end	
 	end
 	
 end

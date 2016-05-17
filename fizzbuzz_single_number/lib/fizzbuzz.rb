@@ -6,6 +6,8 @@ class Fizzbuzz
 			return "buzz"
 		elsif (num % 3 == 0)
 			return "fizz"
+		else
+			return num
 		end
 	end
 end
