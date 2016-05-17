@@ -2,22 +2,24 @@ require 'fizzbuzz'
 
 describe Fizzbuzz do
 	describe 'outcome of fizzbuzz' do
+		(1..20).each do |i|
+			it "return fizzbuzz when #{i} is divisded by 15" do
+				expect(subject.fizz_buzz(i)).to eq "fizzbuzz" if (i % 3 == 0 && i % 5 == 0)
+			end
 
-		it 'return fizzbuzz when divisded by 15' do
-			expect(subject.fizz_buzz(15)).to eq "fizzbuzz"
+			it "return buzz when #{i} is divided by 5" do
+				expect(subject.fizz_buzz(i)).to eq "buzz" if (i % 5 == 0 && i % 3 != 0)
+			end
+
+			it "return fizz when #{i} is divided by 3" do
+				expect(subject.fizz_buzz(i)).to eq "fizz" if(i % 3 == 0 && i % 5 != 0)
+			end
+
+			it "return #{i} when not divisble by 3, 5 or 15" do
+				expect(subject.fizz_buzz(i)).to eq i if(i % 5 != 0 && i % 3 != 0)
+
+			end	
 		end
-
-		it 'return buzz when divided by 5' do
-			expect(subject.fizz_buzz(10)).to eq "buzz"
-		end
-
-		it 'return fizz when divided by 3' do
-			expect(subject.fizz_buzz(6)).to eq "fizz"
-		end
-
-		it 'return number when not divisble by 3, 5 or 15' do
-			expect(subject.fizz_buzz(7)).to eq "7"
-		end	
 	end
 	
 end
